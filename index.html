@@ -389,6 +389,71 @@
                 font-size: 24px;
             }
         }
+
+    /* ========== БЛОК ДЛЯ ПЕЧАТИ ========== */
+         @media print {
+        /* Отключаем прозрачность фона и заставляем печатать все цвета */
+        * {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            color-adjust: exact !important;
+        }
+
+        /* Сохраняем градиент в шапке */
+        .header {
+            background: #0b1a2e !important; /* Запасной темный цвет */
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        /* Делаем текст в шапке ярко-белым (а не серым) */
+        .header,
+        .header * {
+            color: #ffffff !important;
+        }
+
+        /* Убираем лишние тени и скругления для чистоты печати */
+        .container {
+            box-shadow: none !important;
+            border-radius: 0 !important;
+        }
+
+        .qualification-block,
+        .project-block,
+        .extra-row {
+            background: #f0f5fb !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        /* Сохраняем цветные плашки результатов */
+        .job-result {
+            background: #eaf7ef !important;
+            color: #0b5a2e !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        /* Убираем ссылки на футер (они не нужны на бумаге) */
+        .footer {
+            display: none !important;
+        }
+
+        /* Убираем лишние отступы для компактности */
+        body {
+            padding: 0 !important;
+            background: white !important;
+        }
+
+        .body-content {
+            padding: 20px 30px 30px !important;
+        }
+
+        /* Обрезаем фото, чтобы не вылезало */
+        .header-photo {
+            border: 2px solid #ffffff !important;
+        }
+    }
     </style>
 </head>
 <body>
