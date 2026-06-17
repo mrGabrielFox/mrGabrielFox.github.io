@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Томс Дмитрий — Резюме</title>
+    <style>
+        /* ===== ГЛОБАЛЬНЫЕ СТИЛИ ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
+            background: #f4f7fc;
+            color: #1e2a3a;
+            line-height: 1.6;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 20px 60px rgba(0, 20, 40, 0.12);
+            overflow: hidden;
+            padding: 0;
+        }
+
+        /* ===== ШАПКА (Header) ===== */
+        .header {
+            background: linear-gradient(135deg, #0b1a2e 0%, #1a3a5c 100%);
+            color: #ffffff;
+            padding: 48px 50px 40px 50px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .header-photo {
+            flex-shrink: 0;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.30);
+            background: #2a4a6a;
+        }
+
+        .header-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .header-text {
+            flex: 1;
+            min-width: 220px;
+        }
+
+        .header-text h1 {
+            font-size: 38px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+        }
+
+        .header-text .title {
+            font-size: 20px;
+            font-weight: 400;
+            opacity: 0.85;
+            margin-bottom: 18px;
+        }
+
+        .header-contacts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px 30px;
+            font-size: 15px;
+            opacity: 0.90;
+        }
+
+        .header-contacts a {
+            color: #ffffff;
+            text-decoration: none;
+            border-bottom: 1px dotted rgba(255, 255, 255, 0.30);
+            transition: border-color 0.2s;
+        }
+
+        .header-contacts a:hover {
+            border-bottom-color: #ffffff;
+        }
+
+        .header-contacts span {
+            margin-right: 6px;
+            opacity: 0.6;
+        }
+
+        /* ===== ОСНОВНОЙ БЛОК ===== */
+        .body-content {
+            padding: 40px 50px 50px 50px;
+        }
+
+        /* ===== КАРТОЧКИ СЕКЦИЙ ===== */
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #1a3a5c;
+            border-bottom: 3px solid #1a3a5c;
+            padding-bottom: 8px;
+            margin-bottom: 22px;
+        }
+
+        /* ===== КЛЮЧЕВАЯ КВАЛИФИКАЦИЯ ===== */
+        .qualification-block {
+            background: #f0f5fb;
+            padding: 22px 28px;
+            border-radius: 16px;
+            border-left: 6px solid #1a3a5c;
+            margin-bottom: 36px;
+            font-size: 16px;
+        }
+
+        .qualification-block strong {
+            color: #0b1a2e;
+        }
+
+        /* ===== ОПЫТ РАБОТЫ ===== */
+        .job {
+            margin-bottom: 30px;
+        }
+
+        .job:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .job-header h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0b1a2e;
+        }
+
+        .job-header .company {
+            font-weight: 600;
+            color: #1a3a5c;
+        }
+
+        .job-header .period {
+            font-size: 15px;
+            color: #4a5a6a;
+            font-weight: 500;
+            background: #eef2f6;
+            padding: 2px 14px;
+            border-radius: 30px;
+            white-space: nowrap;
+        }
+
+        .job-position {
+            font-weight: 600;
+            color: #1a3a5c;
+            font-size: 17px;
+            margin: 6px 0 10px 0;
+        }
+
+        .job ul {
+            padding-left: 22px;
+            margin: 8px 0 4px 0;
+        }
+
+        .job ul li {
+            margin-bottom: 4px;
+        }
+
+        .job-result {
+            margin-top: 8px;
+            font-weight: 500;
+            color: #0b5a2e;
+            background: #eaf7ef;
+            padding: 6px 16px;
+            border-radius: 30px;
+            display: inline-block;
+            font-size: 14px;
+        }
+
+        /* ===== СОБСТВЕННЫЙ ПРОЕКТ ===== */
+        .project-block {
+            background: #f8faff;
+            border: 1px solid #dce5f0;
+            border-radius: 16px;
+            padding: 22px 28px;
+            margin-top: 6px;
+        }
+
+        .project-block h4 {
+            font-size: 18px;
+            color: #0b1a2e;
+            margin-bottom: 6px;
+        }
+
+        .project-block .project-role {
+            font-weight: 600;
+            color: #1a3a5c;
+            margin-bottom: 12px;
+        }
+
+        .project-block ul {
+            padding-left: 22px;
+            margin: 6px 0 6px 0;
+        }
+
+        .project-block ul li {
+            margin-bottom: 4px;
+        }
+
+        /* ===== НАВЫКИ ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 28px 40px;
+            margin-top: 6px;
+        }
+
+        .skills-category h4 {
+            font-size: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #1a3a5c;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #dce5f0;
+            padding-bottom: 4px;
+        }
+
+        .skills-category ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills-category ul li {
+            padding: 3px 0;
+            font-size: 15px;
+            position: relative;
+            padding-left: 18px;
+        }
+
+        .skills-category ul li::before {
+            content: "▹";
+            color: #1a3a5c;
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+        }
+
+        /* ===== ДОПОЛНИТЕЛЬНО ===== */
+        .extra-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 30px;
+            background: #f0f5fb;
+            padding: 16px 24px;
+            border-radius: 14px;
+            margin-top: 8px;
+        }
+
+        .extra-row span {
+            font-size: 15px;
+        }
+
+        .extra-row strong {
+            color: #0b1a2e;
+        }
+
+        /* ===== О СЕБЕ ===== */
+        .about-text {
+            font-size: 16px;
+            padding: 6px 0;
+        }
+
+        /* ===== ФУТЕР ===== */
+        .footer {
+            text-align: center;
+            font-size: 13px;
+            color: #6a7a8a;
+            padding: 20px 50px 24px 50px;
+            border-top: 1px solid #e8edf3;
+        }
+
+        .footer a {
+            color: #1a3a5c;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* ===== АДАПТИВНОСТЬ ===== */
+        @media (max-width: 700px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px 26px 20px;
+                gap: 20px;
+            }
+
+            .header-text h1 {
+                font-size: 28px;
+            }
+
+            .header-text .title {
+                font-size: 17px;
+            }
+
+            .header-contacts {
+                justify-content: center;
+                font-size: 14px;
+                gap: 12px 18px;
+            }
+
+            .body-content {
+                padding: 24px 20px 30px 20px;
+            }
+
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+
+            .job-header .period {
+                white-space: normal;
+                font-size: 13px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .qualification-block {
+                padding: 16px 18px;
+                font-size: 15px;
+            }
+
+            .project-block {
+                padding: 16px 18px;
+            }
+
+            .extra-row {
+                flex-direction: column;
+                gap: 6px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 16px 10px;
+            }
+            .header-photo {
+                width: 120px;
+                height: 120px;
+            }
+            .header-text h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ===== ШАПКА ===== -->
+    <header class="header">
+        <div class="header-photo">
+            <!-- Замените photo.jpg на имя вашего файла -->
+            <img src="photo.png" alt="Томс Дмитрий" />
+        </div>
+        <div class="header-text">
+            <h1>Томс Дмитрий</h1>
+            <div class="title">Руководитель технических проектов / Product Owner</div>
+            <div class="header-contacts">
+                <div><span>📱</span> +7 (965) 335-25-35</div>
+                <div><span>✉</span> <a href="mailto:dimon-115@mail.ru">dimon-115@mail.ru</a></div>
+                <div><span>📍</span> Москва, РФ</div>
+                <div><span>🚗</span> Права категории B</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== ОСНОВНАЯ ЧАСТЬ ===== -->
+    <div class="body-content">
+
+        <!-- ===== КЛЮЧЕВАЯ КВАЛИФИКАЦИЯ ===== -->
+        <div class="qualification-block">
+            <strong>🔹 Уникальный специалист двойного профиля:</strong> системный инженер с 15-летним опытом на производстве и в управлении, одновременно являющийся IT-предпринимателем. Разрабатываю собственный SaaS-продукт для управления недвижимостью (клиент-серверная архитектура). Объединяю жесткое инженерное мышление (электрика, монтаж, физика процессов) с современными методологиями тестирования и управления IT-проектами.
+        </div>
+
+        <!-- ===== ОПЫТ РАБОТЫ ===== -->
+        <section class="section">
+            <h2 class="section-title">Опыт работы</h2>
+
+            <!-- 1. Самозанятость -->
+            <div class="job">
+                <div class="job-header">
+                    <h3>Самозанятость</h3>
+                    <span class="period">Апрель 2024 — настоящее время</span>
+                </div>
+                <div class="job-position">Технический руководитель проектов / Инженер-строитель</div>
+                <ul>
+                    <li><strong>Полный цикл ремонтно-отделочных работ:</strong> стяжка и выравнивание полов, штукатурка и шпаклёвка стен, чистовая отделка (жидкий шёлк, ламинат), монтаж натяжных потолков и дверей.</li>
+                    <li><strong>Электромонтаж:</strong> прокладка силового кабеля, разводка под розетки и освещение, сборка и расключение щитков с автоматами. Пайка кабеля, сварка металла.</li>
+                    <li><strong>Мебельное производство:</strong> разработка чертежей корпусной мебели, изготовление, сборка и установка.</li>
+                    <li><strong>Управление проектами:</strong> контроль сроков, бюджета и качества на каждом объекте.</li>
+                </ul>
+                <div class="job-result">✅ Более 10 завершённых объектов с высоким качеством</div>
+            </div>
+
+            <!-- 2. Инфомедия -->
+            <div class="job">
+                <div class="job-header">
+                    <h3>ООО «Инфомедия бюро креативных инициатив»</h3>
+                    <span class="period">Июль 2022 — Март 2024</span>
+                </div>
+                <div class="job-position">Руководитель отдела тестирования (QA Lead)</div>
+                <ul>
+                    <li>Руководство отделом до 12 инженеров, распределение задач, аттестация и обучение.</li>
+                    <li>Разработка стратегии контроля качества: функциональное, регрессионное, нагрузочное тестирование.</li>
+                    <li>Ведение 15+ проектов одновременно: мобильные приложения, VR/AR, десктоп, web.</li>
+                    <li>Взаимодействие с разработчиками, менеджерами и заказчиками.</li>
+                </ul>
+                <div class="job-result">✅ Внедрены регламенты, повышающие качество продуктов</div>
+            </div>
+
+            <!-- 3. РАКУРС -->
+            <div class="job">
+                <div class="job-header">
+                    <h3>ООО «РАКУРС БЕЗОПАСНОСТИ»</h3>
+                    <span class="period">Ноябрь 2019 — Май 2022</span>
+                </div>
+                <div class="job-position">Инженер (повышен из монтажников)</div>
+                <ul>
+                    <li>Монтаж, настройка и сдача слаботочных систем: видеонаблюдение, СКУД, домофония.</li>
+                    <li>Работа на крупных объектах: медцентры, фармсклады, БЦ, производственные фабрики.</li>
+                    <li>Чтение проектной документации, подготовка отчётности.</li>
+                </ul>
+                <div class="job-result">✅ Более 20 объектов сдано «под ключ» без замечаний</div>
+            </div>
+
+            <!-- 4. МИРТЕКС -->
+            <div class="job">
+                <div class="job-header">
+                    <h3>ООО «МИРТЕКС»</h3>
+                    <span class="period">Январь 2017 — Июнь 2020</span>
+                </div>
+                <div class="job-position">Генеральный директор (по совместительству)</div>
+                <ul>
+                    <li>Полное руководство компанией: стратегия, операционное управление.</li>
+                    <li>Управление персоналом, заключение контрактов, финансовый контроль.</li>
+                </ul>
+                <div class="job-result">✅ Антикризисное управление до момента ликвидации</div>
+            </div>
+
+            <!-- 5. ФРЕДПАРТС -->
+            <div class="job">
+                <div class="job-header">
+                    <h3>ООО «ФРЕДПАРТС»</h3>
+                    <span class="period">Июнь 2014 — Октябрь 2015</span>
+                </div>
+                <div class="job-position">Технический специалист / Менеджер</div>
+                <ul>
+                    <li>Техническая экспертиза автозапчастей, контроль качества.</li>
+                    <li>Работа с чертежами, ведение складского учёта.</li>
+                </ul>
+            </div>
+
+            <!-- Ранний опыт (кратко) -->
+            <div style="font-size:15px; color:#3a4a5a; margin-top:8px; padding:12px 16px; background:#f7f9fc; border-radius:12px;">
+                <strong>Ранний опыт (инженерная база):</strong> ОАО «Станкоагрегат», АО «ГПЗ-2», ООО «Система ПБО», ФГУП «ФЦДТ „Союз“» (оборонное предприятие) — станочник широкого профиля, работа с допусками, чертежами, тяжёлым металлом.
+            </div>
+        </section>
+
+        <!-- ===== СОБСТВЕННАЯ РАЗРАБОТКА ===== -->
+        <section class="section">
+            <h2 class="section-title">Собственная разработка</h2>
+            <div class="project-block">
+                <h4>«Умное ЖКХ / Property Management System»</h4>
+                <div class="project-role">Product Owner / Архитектор / Разработчик</div>
+                <p><strong>Концепция:</strong> SaaS-платформа для автоматизации управления съемной недвижимостью (клиент-серверная архитектура).</p>
+                <ul>
+                    <li>Арендодатель создаёт профиль недвижимости, заводит счётчики (электричество, ГВС, ХВС, газ).</li>
+                    <li>Генерирует и подписывает электронный договор аренды с арендатором.</li>
+                    <li>Арендатор ежемесячно вводит показания, система автоматически рассчитывает потребление и формирует итоговый счёт.</li>
+                    <li>Проведение оплаты через платёжный агрегатор с чеком и подтверждением пролонгации аренды.</li>
+                </ul>
+                <div style="margin-top:10px; font-weight:500; color:#1a3a5c;">📌 Статус: проработана бизнес-логика, архитектура, прототип интерфейса. Ведутся работы над рабочей версией.</div>
+            </div>
+        </section>
+
+        <!-- ===== НАВЫКИ ===== -->
+        <section class="section">
+            <h2 class="section-title">Навыки</h2>
+            <div class="skills-grid">
+                <div class="skills-category">
+                    <h4>Управление</h4>
+                    <ul>
+                        <li>Руководство отделами (до 15 чел.)</li>
+                        <li>Стратегическое планирование</li>
+                        <li>Бюджетирование</li>
+                        <li>Аттестация и обучение</li>
+                        <li>Ведение переговоров</li>
+                        <li>Agile / Waterfall</li>
+                    </ul>
+                </div>
+                <div class="skills-category">
+                    <h4>IT и QA</h4>
+                    <ul>
+                        <li>Unity, Unreal Engine</li>
+                        <li>Figma, Adobe Photoshop, AE</li>
+                        <li>GitHub, ClickUp</li>
+                        <li>C#, Flutter, HTML, CSS</li>
+                        <li>Администрирование Windows</li>
+                        <li>TCP/IP, DNS, DHCP</li>
+                    </ul>
+                </div>
+                <div class="skills-category">
+                    <h4>Инженерия и строительство</h4>
+                    <ul>
+                        <li>Чтение чертежей и схем</li>
+                        <li>Электромонтаж (силовой/слаботочный)</li>
+                        <li>Сборка электрощитов</li>
+                        <li>Монтаж СКУД, видеонаблюдения</li>
+                        <li>Отделочные работы (под ключ)</li>
+                        <li>Сварка, пайка</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ДОПОЛНИТЕЛЬНО ===== -->
+        <section class="section">
+            <h2 class="section-title">Дополнительно</h2>
+            <div class="extra-row">
+                <span><strong>🧠 Машинное зрение:</strong> изучал базовые принципы и алгоритмы компьютерного зрения для потенциального применения в будущих проектах (отдельный от PMS трек).</span>
+                <span><strong>🗣 Языки:</strong> Русский — родной, Английский — A1.</span>
+                <span><strong>📄 Права:</strong> Категория B, стаж вождения.</span>
+            </div>
+        </section>
+
+        <!-- ===== О СЕБЕ ===== -->
+        <section class="section">
+            <h2 class="section-title">О себе</h2>
+            <div class="about-text">
+                Системный, ответственный и целеустремлённый специалист. Легко обучаюсь, постоянно занимаюсь самообразованием. Умею работать как в команде, так и самостоятельно, несу полную ответственность за результат. Обладаю развитым инженерным мышлением, способностью видеть проблему комплексно и находить нестандартные решения. Стрессоустойчив, пунктуален, аккуратен. Быстро нахожу общий язык с людьми на всех уровнях — от рабочих до топ-менеджмента.
+            </div>
+        </section>
+
+    </div>
+
+    <!-- ===== ФУТЕР ===== -->
+    <div class="footer">
+        © 2026 Томс Дмитрий · Сайт-резюме на <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+    </div>
+
+</div>
+
+</body>
+</html>
