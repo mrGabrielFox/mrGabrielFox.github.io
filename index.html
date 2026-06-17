@@ -391,7 +391,7 @@
         }
 
     /* ========== БЛОК ДЛЯ ПЕЧАТИ ========== */
-      @media print {
+     @media print {
     /* Заставляем браузер печатать все фоны и цвета */
     * {
         -webkit-print-color-adjust: exact !important;
@@ -403,6 +403,9 @@
         background: #0b1a2e !important;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
+        
+        /* ВОЗВРАЩАЕМ СКРУГЛЕНИЕ ТОЛЬКО ДЛЯ ВЕРХНИХ УГЛОВ, ЧТОБЫ КВАДРАТ ИСЧЕЗ */
+        border-radius: 32px 32px 0 0 !important;
     }
 
     /* Делаем текст в шапке ярко-белым */
@@ -411,10 +414,11 @@
         color: #ffffff !important;
     }
 
-    /* Убираем тени и скругления для печати */
+    /* Убираем тени и скругления у основного контейнера, чтобы он был ровным */
     .container {
         box-shadow: none !important;
         border-radius: 0 !important;
+        overflow: hidden !important; /* Это скроет лишние края */
     }
 
     /* Сохраняем цветные блоки */
